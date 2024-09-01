@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
+    <title>Movie</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    
+<div class = "wrapper pre">
+  
+</div>
+<div class="wrapper">
+  <div class="title">
+    Go to nuplex and Watch a Movie ...
+    <div class="line"></div>
+  </div>
+  <div class="container">
+    <div class="card tabs">
+      <input id="tab-1" type="radio" class="tab tab-selector" checked="checked" name="tab" />
+      <label for="tab-1" class="tab tab-primary">With Friends</label>
+      <input id="tab-2" type="radio" class="tab tab-selector" name="tab" />
+      <label for="tab-2" class="tab tab-success">With Ayesha</label>
+   
+      <div class="tabsShadow"></div>
+      <div class="glider"></div>
+      <section class="content">
+        <div class="item" id="content-1">
+            <div class="buttonscustom">
+                <button class="button-63" role="button" id="yesfriends">Yes</button>
+                <button class="button-63" role="button" id="nofirends">No</button>
+            </div>
+          
+        </div>
+        <div class="item" id="content-2">
+            <!-- Other content here -->
+            <div class="buttonscustom">
+              
+            </div>
+            <div class="button-container">
+                <button class="button-63" role="button" id="nofirends">No</button>
+                <button id="trickyButton">Yes</button>
+                
+            </div>
+        </div>
+        
+       
+      </section>
+
+    </div>
+  </div>
+</div>
+</body>
+
+<script>
+const button = document.getElementById('trickyButton');
+
+button.addEventListener('mouseover', function() {
+    const container = button.parentElement.parentElement; // Get the #content-2 div
+    const containerWidth = container.clientWidth;
+    const containerHeight = container.clientHeight;
+
+    // Generate random positions within the container bounds
+    const randomX = Math.random() * (containerWidth - button.clientWidth);
+    const randomY = Math.random() * (containerHeight - button.clientHeight);
+
+    // Move the button quickly to the new position
+    button.style.transition = 'all 0.1s ease'; // Fast movement
+    button.style.left = `${randomX}px`;
+    button.style.top = `${randomY}px`;
+});
+
+// Optional: Add animation on click
+button.addEventListener('click', function() {
+    alert("Shit Yaaarrrr ab jaaana parega....");
+});
+
+document.getElementById("yesfriends").addEventListener("click", function() {
+        alert("Chlo bhaeee done haaa Kab niklna...?!");
+    });
+
+    document.getElementById("nofirends").addEventListener("click", function() {
+        alert("Aby Yarr Harrr baar topi kara dety hoo ajeeb...!");
+    });
+
+    
+
+    document.getElementById("noayesha").addEventListener("click", function() {
+        alert("Behtreeeennnn Hgyaaa Shukaarrr haaa");
+    });
+
+    </script>
+</html>
